@@ -1,0 +1,87 @@
+
+
+
+body{
+    height: 200vh;
+   
+}
+#logo_img{
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+    padding: 5px;
+    
+}
+
+  .float_nav{  
+    background-color:#e74c3c;   
+    color:white;   
+    padding:5px;   
+    text-align:center;   
+  
+    left:0;   
+    top:0;   
+    width:100%;   
+    transition: top .5s;  
+  }  
+  .gizle {  
+    top: -90px;  
+  }  
+  .sabit {  
+    top:0;  
+    z-index: 9999;  
+  } 
+  .clear-padding{
+      padding:0px;
+  }
+  .clear-margin{
+      margin:0px;
+  }
+  .clear-all{
+      padding:0px;
+      margin:0px;
+  }
+  .vh-20{
+      height: 20vh;
+  }
+  .vh-40{
+    height: 40vh;
+}
+.vh-30{
+    height: 30vh;
+}
+.relative{ 
+    position:relative;
+}
+.middle{
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+.margin-top-bottom-30{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.dis-inline-block{
+    display: inline-block;
+}
+.dis-inline{
+    display: inline;
+}
+a,a:hover,a:link{
+    text-decoration-line: none;
+}
+a{
+    color:black;
+}
+a:hover{
+    color:orange;
+}
+a:link{
+    color: #ccc;
+}
+
+
+
+ 
+

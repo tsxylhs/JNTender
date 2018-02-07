@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+	<!-- spring mvc配置文件 -->
+	<description>Spring MVC Configuration</description>
+
+	<!-- 加载配置属性文件 -->
+	<context:property-placeholder
+		ignore-unresolvable="true" location="classpath:jntender.properties" />	
+	
+	<!-- 定义无Controller的path<->view直接映射 -->
+	<mvc:view-controller path="/"
+		view-name="redirect:${web.view.index}" />
+		
+	<!-- 使用Annotation自动注册Bean,只扫描@Controller -->
+	<context:component-scan base-package="com.jn"
+		use-default-filters="false"><!-- base-package 如果多个，用“,”分隔 -->
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+	<!-- 启用注解驱动,即解决了@Controller注解的使用前提配置 -->
+    <mvc:annotation-driven/>
+    <context:component-scan base-package="com.jn"></context:component-scan>
+	
+	
+	<!-- 定义视图文件解析 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 配置JSP路径 的前缀和后缀 -->
+		<property name="prefix" value="${web.view.prefix}" />
+		<property name="suffix" value="${web.view.suffix}" />
+	</bean>
+
+	<!-- 对静态资源文件的访问， 将无法mapping到Controller的path交给default servlet handler处理 -->
+	<mvc:default-servlet-handler />
+
+	<!-- 静态资源映射 -->
+	<mvc:resources mapping="/static/**" location="/static/"
+		cache-period="31536000" />
+
+	 <import resource="spring-mongodb.xml"/>  
+
+
+
+	
+
+	
+
+	
+
+</beans>
