@@ -60,6 +60,16 @@ public  class BaseService {
 		userdao.findfilter();
 		
 	}
+	/**
+	 * 
+	 * @方法名: getpage
+	 * @描述:
+	 * @作者:lhs
+	 * @日期 2018年2月8日 下午11:31:25
+	 * @返回值: void
+	 * @修改人:
+	 * @修改时间:
+	 */
 	public void getpage(){
 	   userdao.getPage(2, 4);
 	}
