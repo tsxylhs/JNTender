@@ -78,6 +78,12 @@ public class User implements Serializable {
 
   public void setBirth(Timestamp birth) {  
       this.birth = birth;  
-  }  
+  }
+
+@Override
+public String toString() {
+	return "User [id=" + id + ", name=" + name + ", age=" + age + ", birth=" + birth + "]";
+}  
+  
 
 }  

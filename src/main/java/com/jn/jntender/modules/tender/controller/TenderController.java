@@ -39,6 +39,10 @@ public class TenderController {
 	public void Mongofind(){
 		baseService.findtest();
 	}
+	@RequestMapping(value="getpage")
+	public void getpagecontent(){
+		baseService.getpage();
+	}
 	@RequestMapping(value="findfilter")
 	public void mongofindfilter(){
 		baseService.findfilter();
