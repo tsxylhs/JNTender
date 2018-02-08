@@ -15,6 +15,10 @@ public  class BaseService {
 	public void findtest(){
 		userdao.find();
 	}
+	public void findfilter() {
+		userdao.findfilter();
+		
+	}
 	
 
 	/*protected abstract IBaseDao<T> getDao();

@@ -39,11 +39,15 @@ public class TenderController {
 	public void Mongofind(){
 		baseService.findtest();
 	}
+	@RequestMapping(value="findfilter")
+	public void mongofindfilter(){
+		baseService.findfilter();
+	}
 	
-	@RequestMapping(value="test")
+	@RequestMapping(value="save")
 	public void Mongotest(){
 		User user = new User();
-		user.setName("lhs");
+		user.setName("hzw");
 		user.setAge(29);
 		user.setBirth(new Timestamp(System.currentTimeMillis()));
 		baseService.savetest(user);
